@@ -1294,6 +1294,10 @@ limitations under the License.
           this._vaadinGrid._pxDataGrid = this;
           this._vaadinGrid.addEventListener('px-sorter-changed', this._onPxSorterChanged);
 
+          if (this.gridHeight != 'auto') {
+            this._vaadinGrid.style.maxHeight = this.gridHeight;
+          }
+          
           // Attach scroll listener for styling
           this._boundedScrollListener = this._scrollListener.bind(this);
           this._vaadinGrid.$.outerscroller.addEventListener('scroll', this._boundedScrollListener);
